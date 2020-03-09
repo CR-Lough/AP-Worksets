@@ -3,6 +3,6 @@ Invoicing doesn't always come in friendly Ctrl-V form. Found here are examples o
 make them 'the good'
 
 I expect this will include the mediums of:
-PL - SQL (SQL Developer IDE) 
-R (RStudio IDE)
+PL - SQL (SQL Developer IDE), 
+R (RStudio IDE),
 Python (Jupyter IDE)
