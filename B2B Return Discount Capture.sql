@@ -1,4 +1,4 @@
-#Faced with capturing the amounts owed to suppliers due to terms discounts by department for all of the B2B return shipments for a period of time. Three added challenges were present: 
+# Faced with capturing amounts owed to suppliers due to terms discounts by department for all B2B return shipments for a period of time. Three added challenges were present: 
 #1) One being that a shipment can involve multiple departments in it
 #2) Discount amounts needed to be paid by individual shipment (resulting in many duplicate rows when joining tables)
 #3) Individual suppliers have their own terms. Meaning supplier A and supplier B could both deal with department 123, but have different discount terms (no common identifier)
