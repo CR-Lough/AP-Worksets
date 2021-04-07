@@ -1,0 +1,29 @@
+-- recursive CTE to retrieve a chain of unknown purchase order numbers (cross referenced)
+-- anchor the purchase order in question. any point of the chain can be the anchor
+WITH cte_xrefs (order_no,comments,xref_no) AS (
+
+	SELECT 
+		oh.order_no,
+		oh.comments,
+		od.xref_no
+	FROM order_head oh
+		JOIN order_details od
+			ON od.order_no = oh.order_no
+	-- parameter comes from Tableau workbook
+	WHERE order_head = <Parameter po_number>
+	
+	UNION ALL
+	
+	SELECT 
+		oh.order_no,
+		oh.comments,
+		od.xref_no
+	FROM order_head oh
+		JOIN order_details od
+			ON od.order_no = oh.order_no
+		JOIN cte_xrefs cx
+			ON cx.xref_no = od.order_no
+)
+SELECT *
+FROM cte_xrefs
+				
